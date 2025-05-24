@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# TodoList
+Todo List on Ruby on rails and React
+=======
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +26,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+>>>>>>> ff2e0fb (Backend completed)
