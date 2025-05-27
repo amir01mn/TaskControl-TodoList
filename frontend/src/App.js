@@ -3,14 +3,21 @@ import './App.css';
 
 import { useState, useEffect } from 'react';
 
+import {get_todos} from './api/endpoints'; 
+
 import TodoList from './components/TodoList';
 
 function App() {
 
-  const[todos, setTodo] = useState([])
+  const[todos, setTodos] = useState([])
 
     useEffect(() => {
-
+      const fetchTodos = async () => {
+        const todos = await get_todos();
+        setTodos(todos);
+        console.log(todos)
+      }
+      fetchTodos();
     }, [])
 
 
