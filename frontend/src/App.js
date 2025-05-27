@@ -15,7 +15,6 @@ function App() {
       const fetchTodos = async () => {
         const todos = await get_todos();
         setTodos(todos);
-        console.log(todos)
       }
       fetchTodos();
     }, [])
@@ -25,7 +24,7 @@ function App() {
     <div className="App">
       <div className='app-container'>
         <h1 className='title'>Todo App</h1>
-        <TodoList />
+        <TodoList todos={todos}/>
 
       </div>
       
