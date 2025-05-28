@@ -20,9 +20,17 @@ const Todo = ({id, todo_name, completed, deleteTodo}) =>{
     return(
         <div className='todo'>
             <div className='todo-container'>
-                <input checked={isChecked} onClick={handleComplete} type='checkbox' />
-                <h3>{todo_name}</h3>
-                <FaDeleteLeft onClick={handleDelete} size = '20px'/>
+                <input 
+                    checked={isChecked} 
+                    onChange={handleComplete} 
+                    type='checkbox' 
+                />
+                <h3 className={isChecked ? 'completed' : ''}>{todo_name}</h3>
+                <FaDeleteLeft 
+                    onClick={handleDelete} 
+                    size='20px'
+                    className="delete-icon"
+                />
 
             </div>
 
