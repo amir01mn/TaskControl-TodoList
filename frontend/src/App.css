@@ -49,3 +49,27 @@
   margin-top: 30px;
   
 }
+
+.add-todo {
+  margin-top: 20px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+
+}
+
+.add-input{
+  width: 80%;
+  height: 30px;
+
+
+}
+
+.add-button{
+  width:20%;
+  height: 100%;
+
+}
