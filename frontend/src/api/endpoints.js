@@ -8,20 +8,44 @@ const DELETE_URL = (id) => `${BASE_URL}todos/${id}`
 const UPDATE_URL = (id) => `${BASE_URL}todos/${id}/update_completed`
 
 export const get_todos = async() => {
-    const response = await axiox.get(GET_URL);
+    const token = localStorage.getItem('token');
+    const response = await axios.get(GET_URL, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
     return response.data;
 }
 
 export const create_todo = async (todo_name) => {
-    const response = await axios.post(POST_URL, {'todo_name':todo_name, 'completed':false});
+    const token = localStorage.getItem('token');
+    const response = await axios.post(
+      POST_URL,
+      {
+        todo_name,
+        completed: false,
+        category: 'general',
+        priority: 'medium'
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` }
+      }
+    );
     return response.data;
 }
 
 export const delete_todo = async (id) => {
-    const response = await axios.delete(DELETE_URL(id));
+    const token = localStorage.getItem('token');
+    const response = await axios.delete(DELETE_URL(id), {
+      headers: { Authorization: `Bearer ${token}` }
+    });
     return response.data;
 }
 
 export const update_todo = async (id, completed) => {
-    const response = await axios.patch(UPDATE_URL(id), {'completed':completed})
+    const token = localStorage.getItem('token');
+    const response = await axios.patch(
+      UPDATE_URL(id),
+      { completed },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    return response.data;
 }

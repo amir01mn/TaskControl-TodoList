@@ -1,10 +1,10 @@
 class Api::TodosController < ApplicationController
+  before_action :authorize_request
   before_action :set_todo, only: %i[ show update_completed destroy ]
 
   # GET /todos
   def index
-    @todos = Todo.order(created_at: :desc)
-
+    @todos = current_user.todos.order(created_at: :desc)
     render json: @todos
   end
 
@@ -15,8 +15,7 @@ class Api::TodosController < ApplicationController
 
   # POST /todos
   def create
-    @todo = Todo.new(todo_params)
-
+    @todo = current_user.todos.new(todo_params)
     if @todo.save
       render json: @todo, status: :created
     else
@@ -42,11 +41,26 @@ class Api::TodosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_todo
-      @todo = Todo.find(params.expect(:id))
+      @todo = current_user.todos.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def todo_params
-      params.expect(todo: [ :todo_name, :string, :completed ])
+      params.permit(:todo_name, :completed, :category, :priority, :due_date)
+    end
+
+    def authorize_request
+      header = request.headers['Authorization']
+      header = header.split(' ').last if header
+      begin
+        decoded = JWT.decode(header, Rails.application.credentials.secret_key_base)[0]
+        @current_user = User.find(decoded['user_id'])
+      rescue
+        render json: { errors: 'Unauthorized' }, status: :unauthorized
+      end
+    end
+
+    def current_user
+      @current_user
     end
 end
