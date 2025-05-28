@@ -1,11 +1,10 @@
-# Modern Todo List Application
+# Modern Task Control/Todo List Application
 
 A sleek, secure, and feature-rich Todo List application built with React and Ruby on Rails. This project demonstrates modern web development practices, including authentication, user-specific data, JWT, and a beautiful dark/light theme toggle.
 
 ![React](https://img.shields.io/badge/React-19.1.0-blue)
 ![Ruby on Rails](https://img.shields.io/badge/Ruby%20on%20Rails-8.0-red)
 ![JWT](https://img.shields.io/badge/JWT-Authentication-green)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
