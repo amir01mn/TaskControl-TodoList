@@ -36,7 +36,7 @@ A sleek, secure, and feature-rich Todo List application built with React and Rub
 |------------|-----------|
 | ![Login](screenshots/login.png) | ![Register](screenshots/register.png) |
 
-
+ 
 ---
 
 ## 🛠️ Technologies Used
