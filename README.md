@@ -31,13 +31,11 @@ A sleek, secure, and feature-rich Todo List application built with React and Rub
 |------------|-----------|
 | ![Light Mode](screenshots/light-mode.png) | ![Dark Mode](screenshots/dark-mode.png) |
 
-> **Tip:** To include your own screenshots, create a `screenshots/` folder in your project root and add images named `light-mode.png` and `dark-mode.png` (or update the paths above).
-
 ---
+screenshots/login.png
+screenshots/register.png
 
-## 🚀 Live Demo
 
-[Add your deployed application URL here]
 
 ---
 
@@ -171,15 +169,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 👥 Author
 
----
-
-## 👥 Authors
-
-- Your Name - Initial work
+- Amirhossein Mansouri
 
 ---
 
