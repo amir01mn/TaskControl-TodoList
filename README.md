@@ -31,10 +31,10 @@ A sleek, secure, and feature-rich Todo List application built with React and Rub
 |------------|-----------|
 | ![Light Mode](screenshots/light-mode.png) | ![Dark Mode](screenshots/dark-mode.png) |
 
----
-screenshots/login.png
-screenshots/register.png
 
+| Login | Register |
+|------------|-----------|
+| ![Login](screenshots/login.png) | ![Register](screenshots/register.png) |
 
 
 ---
